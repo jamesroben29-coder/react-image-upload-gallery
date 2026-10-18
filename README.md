@@ -2,9 +2,11 @@
 
 A responsive image upload gallery built with React.js, JavaScript, HTML5, and CSS3. This project allows users to upload multiple images, preview and manage their gallery, and receive clear error messages when the upload limit is exceeded.
 
+
 ## Live Demo
 
-🚀 **Live Demo:** Not deployed yet.
+🚀 **Live Demo:** [View the Live Website](https://react-image-upload-gallery.vercel.app)
+
 
 Deploy this project using [Vercel](https://vercel.com/new) and replace this section with the production URL once deployment is complete.
 
