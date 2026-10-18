@@ -1,16 +1,62 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React Image Upload Gallery
 
-Currently, two official plugins are available:
+A responsive image upload gallery built with React.js and JavaScript.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Upload multiple images
+- Preview uploaded images in a gallery
+- Remove individual images
+- Delete all uploaded images
+- Validate the maximum limit of 20 images
+- Display error messages when the upload limit is exceeded
+- Responsive gallery layout
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/jamesroben29-coder/react-image-upload-gallery.git
+```
+
+### 2. Navigate to the project folder
+
+```bash
+cd react-image-upload-gallery
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal to view the application.
+
+## What I Learned
+
+- Building reusable React components
+- Managing state and user interactions
+- Handling image uploads and validation
+- Displaying useful error messages
+- Creating responsive user interfaces
+
+## Author
+
+GitHub: [james-roben29-coder](https://github.com/james-roben29-coder)
