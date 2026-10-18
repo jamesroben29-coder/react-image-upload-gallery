@@ -8,8 +8,6 @@ A responsive image upload gallery built with React.js, JavaScript, HTML5, and CS
 🚀 **Live Demo:** [View the Live Website](https://react-image-upload-gallery.vercel.app)
 
 
-Deploy this project using [Vercel](https://vercel.com/new) and replace this section with the production URL once deployment is complete.
-
 ## GitHub Repository
 
 🔗 [View Source Code on GitHub](https://github.com/james-roben29-coder/react-image-upload-gallery)
