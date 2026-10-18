@@ -1,122 +1,58 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
+import UpLoadForm from './components/UpLoadForm';
+import ImageGallary from "./components/ImageGallary"
+import "./App.css";
+const App = () => {
 
-function App() {
-  const [count, setCount] = useState(0)
+
+  const [ images , setImages ] = useState([
+      { id : 1, image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRE1tPqkPXpuHxm0xPGops-VH6C_4pAw5kH68RnmMXRBg&s=10"},
+      { id : 2, image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBTA7-NtGbyUTfNkWfYkqk2Pz-xAFEGoWGNQ3sqjBL6g&s=10"},
+      { id : 3, image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7G_vHn8Nw2FTSC_v_yqcXbx11QLjbtbqeyGPfess_2A&s=10"},
+      { id : 4, image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQUaS_gFCG7lROmAeKg-VlGy3_6rvgTbEX9ss4hwLz8w&s=10"},
+
+  ]);
+
+  const [ error , setError ] = useState(null);
+
+  const handleUpdatedImage = (file) =>{
+
+      const imageData = Array.from(file).map((fileObj) => {
+          return {
+            id : crypto.randomUUID(),
+            image : URL.createObjectURL(fileObj),
+          }
+      })
+
+      const totalImages = [ ...images , ...imageData];
+
+      if(totalImages.length > 20 ){
+
+          setTimeout(() => {
+              setError("You cann't add more then 20 images!");
+          },1000);
+
+          setTimeout(() => {
+                setError(null); 
+          }, 5000);
+          return;
+      }
+      
+      setImages([ ...images , ...imageData]);
+     
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
+    <div className='app-container'>
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
+            <UpLoadForm handleUpdatedImage={handleUpdatedImage} error={error} setError={setError}/>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+        <hr />
+        <div>
+            <ImageGallary images={images} setImages={setImages}/>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    </div>
   )
 }
 
-export default App
+export default App;
