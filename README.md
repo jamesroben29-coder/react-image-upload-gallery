@@ -1,62 +1,56 @@
-
 # React Image Upload Gallery
 
-A responsive image upload gallery built with React.js and JavaScript.
+A responsive image upload gallery built with React.js, JavaScript, HTML5, and CSS3. This project allows users to upload multiple images, preview and manage their gallery, and receive clear error messages when the upload limit is exceeded.
+
+## Live Demo
+
+🚀 **Live Demo:** Not deployed yet.
+
+Deploy this project using [Vercel](https://vercel.com/new) and replace this section with the production URL once deployment is complete.
+
+## GitHub Repository
+
+🔗 [View Source Code on GitHub](https://github.com/james-roben29-coder/react-image-upload-gallery)
 
 ## Features
 
-- Upload multiple images
-- Preview uploaded images in a gallery
-- Remove individual images
-- Delete all uploaded images
-- Validate the maximum limit of 20 images
-- Display error messages when the upload limit is exceeded
-- Responsive gallery layout
+- **Multiple Image Uploads** — Upload multiple images through the upload interface.
+- **Image Preview Gallery** — Preview uploaded images in a gallery layout.
+- **Remove Individual Images** — Remove a selected image from the gallery.
+- **Delete All Images** — Clear all uploaded images at once.
+- **Upload Limit Validation** — Enforce a maximum limit of 20 images.
+- **Error Handling** — Display an error message when the upload limit is exceeded.
+- **Responsive Design** — Adapt the gallery layout to different screen sizes.
+- **Reusable Components** — Separate the upload form and image gallery into React components.
 
 ## Tech Stack
 
 - React.js
-- JavaScript
+- JavaScript (ES6+)
 - HTML5
 - CSS3
 - Vite
+- Git
+- GitHub
+- Vercel (Deployment)
 
-## Getting Started
+## Project Structure
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/jamesroben29-coder/react-image-upload-gallery.git
-```
-
-### 2. Navigate to the project folder
-
-```bash
-cd react-image-upload-gallery
-```
-
-### 3. Install dependencies
-
-```bash
-npm install
-```
-
-### 4. Start the development server
-
-```bash
-npm run dev
-```
-
-Open the local URL displayed in your terminal to view the application.
-
-## What I Learned
-
-- Building reusable React components
-- Managing state and user interactions
-- Handling image uploads and validation
-- Displaying useful error messages
-- Creating responsive user interfaces
-
-## Author
-
-GitHub: [james-roben29-coder](https://github.com/james-roben29-coder)
+```text
+react-image-upload-gallery/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── ImageGallary.jsx
+│   │   └── UpLoadForm.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.js
